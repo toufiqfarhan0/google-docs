@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+<<<<<<< HEAD
+import { ClerkProvider } from "@clerk/nextjs";
+import { dark } from "@clerk/themes";
+=======
+>>>>>>> 34f6514d44a5a672b39d730f4c199d4b45a52049
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +20,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+<<<<<<< HEAD
+    <ClerkProvider 
+    appearance={{
+      baseTheme: dark,
+      variables: {
+        colorPrimary:"#3371FF",
+        fontSize: '16px'
+      },
+    }}
+    frontendApi={process.env.NEXT_PUBLIC_CLERK_FRONTEND_API}
+    >
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
+    </ClerkProvider>
+  );
+}
+
+=======
     <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
   );
 }
+>>>>>>> 34f6514d44a5a672b39d730f4c199d4b45a52049
